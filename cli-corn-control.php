@@ -54,7 +54,7 @@ class VIP_Corn_Control_CLI extends WP_CLI_Command {
 	private function make_progress_bar( $message, $count, $interval = 100 ) {
 		require_once __DIR__ . '/class-cornbar.php';
 		if ( Shell::isPiped() ) {
-			return new NoOp();
+			return new WP_CLI\NoOp();
 		}
 	
 		return new cli\progress\CornBar( $message, $count, $interval );
